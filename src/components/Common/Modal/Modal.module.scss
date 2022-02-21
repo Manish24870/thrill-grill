@@ -1,0 +1,65 @@
+@import "../../../sass/variables";
+
+////////////////////////////////////
+///////MODAL//////////
+
+.modal {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+
+  &__content {
+    text-align: center;
+    max-width: 50rem;
+    // background-color: $color-grey-light-1;
+    background-color: $color-sky-blue-dark-1;
+    box-shadow: 0 8px 2rem rgba(#000, 0.25);
+    border-radius: 4px;
+    padding: 2rem 6rem;
+
+    @media only screen and (max-width: $bp-smallest) {
+      height: 20rem;
+      padding: 1.5rem 3rem;
+    }
+  }
+
+  &__message {
+    color: $color-blue-1;
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-weight: 600;
+    margin-bottom: 4rem;
+
+    @media only screen and (max-width: $bp-smallest) {
+      font-size: 3rem;
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__error {
+    color: $color-red-1;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    font-weight: 500;
+
+    @media only screen and (max-width: $bp-smallest) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__icon {
+    height: 11rem;
+    width: 11rem;
+    fill: $color-blue-1;
+
+    @media only screen and (max-width: $bp-smallest) {
+      height: 8rem;
+      width: 8rem;
+    }
+  }
+}

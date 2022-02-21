@@ -1,0 +1,53 @@
+@import "../../../../sass/variables";
+
+////////////////////////////////////
+/////////SEARCH BAR/////////////
+
+.search {
+  grid-column: content-start/content-end;
+  margin: 0 auto;
+  align-self: center;
+
+  &__form {
+    display: flex;
+  }
+
+  &__input {
+    background-color: $color-white-1;
+    border: none;
+    color: $color-grey-dark-1;
+    font-size: 1.6rem;
+    font-family: inherit;
+    padding: 1rem 2rem;
+    border-radius: 2px;
+    width: 45rem;
+    outline: none;
+
+    &::placeholder {
+      color: $color-grey-1;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      width: 40rem;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      width: 32rem;
+    }
+  }
+
+  &__button {
+    background-color: $color-white-1;
+    border: none;
+    transform: translateX(-3rem);
+    color: $color-white-1;
+    outline: none;
+    cursor: pointer;
+  }
+
+  &__logo {
+    height: 2rem;
+    width: 2rem;
+    fill: $color-grey-1;
+  }
+}

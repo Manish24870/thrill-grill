@@ -1,0 +1,73 @@
+@import "../../../../sass/variables";
+
+////////////////////////////////////
+///////ORDER FORM//////////
+.orderForm {
+  margin-top: 4rem;
+  grid-column: content-start / col-end 3;
+
+  display: flex;
+  flex-direction: column;
+
+  &__input {
+    background-color: $color-white-1;
+    font-family: inherit;
+    font-size: 1.6rem;
+    color: $color-grey-dark-1;
+    padding: 1.3rem 2.8rem;
+    margin-bottom: 3rem;
+    border-radius: 2px;
+    border: none;
+    outline: none;
+  }
+
+  @media only screen and (max-width: $bp-large) {
+    grid-column: content-start / col-end 4;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-column: col-start 2 / col-end 7;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    grid-column: content-start / content-end;
+  }
+}
+
+////////////////////////////////////
+///////ORDER BUTTON//////////
+.btn {
+  font-family: inherit;
+  outline: none;
+  border: none;
+  padding: 1.5rem 4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &__order {
+    font-size: 1.8rem;
+    align-self: flex-start;
+    transition: all 0.4s;
+    background-color: $color-red-1;
+    color: $color-white-1;
+
+    &:hover {
+      background-color: $color-red-light-1;
+    }
+
+    &:active {
+      background-color: $color-red-1;
+    }
+
+    &:disabled {
+      background-color: $color-grey-1;
+      cursor: default;
+    }
+  }
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}

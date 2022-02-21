@@ -1,0 +1,53 @@
+@import "../../../sass/variables";
+
+////////////////////////////////////
+///////PAGINATION/////////
+
+.pagination {
+  margin: 8rem 0;
+  grid-column: content-start/content-end;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  &__icon {
+    background: $color-white-1;
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: $color-sky-blue-1;
+      cursor: pointer;
+    }
+
+    &:active {
+      background-color: $color-sky-blue-dark-1;
+    }
+  }
+
+  &__current {
+    color: $color-red-1;
+    margin-left: 2rem;
+  }
+
+  &__total {
+    color: $color-grey-light-1;
+    margin-right: 2rem;
+  }
+
+  &__line {
+    height: 60%;
+    width: 2px;
+    background-color: $color-grey-light-1;
+    margin: 1rem;
+  }
+}
+
+.icon {
+  &__back,
+  &__front {
+    fill: $color-grey-dark-1;
+    height: 3.5rem;
+    width: 3.5rem;
+  }
+}

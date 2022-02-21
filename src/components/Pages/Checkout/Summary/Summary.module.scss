@@ -1,0 +1,136 @@
+@import "../../../../sass/variables";
+
+///////////////////////////////////////
+///////////SUMMARY//////////////
+.summary {
+  grid-column: col-start 6 / content-end;
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-column: col-start 2 / col-end 7;
+    margin-bottom: 4rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    grid-column: content-start / content-end;
+  }
+}
+
+///////////////////////////////////////
+///////////SUMMARY ITEM//////////////
+.summaryItem {
+  background-color: $color-white-1;
+  margin: 4rem 0;
+  padding: 3rem;
+  height: 26rem;
+
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+
+  &__heading {
+    color: $color-grey-dark-1;
+    font-weight: 400;
+    font-size: 2.6rem;
+    text-transform: uppercase;
+  }
+
+  @media only screen and (max-width: $bp-large) {
+    padding: 2rem;
+    height: 22rem;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 2rem 4rem;
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    padding: 2rem;
+  }
+}
+
+.summaryInfo {
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    color: $color-grey-dark-1;
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__type {
+    span {
+      font-size: 1.6rem;
+    }
+
+    select {
+      font-family: inherit;
+      background-color: $color-blue-light-1;
+      border: none;
+      padding: 5px 1rem;
+      color: $color-white-1;
+      width: 30%;
+      font-size: 1.5rem;
+      appearance: none;
+      background: url(../../../../resources/icons/down.svg) 94% / 12% no-repeat
+        $color-blue-light-1;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      cursor: pointer;
+      text-decoration: none;
+
+      option {
+        padding: 2rem;
+        outline: none;
+        border: none;
+      }
+
+      &:focus,
+      &:active {
+        outline: none;
+        border: none;
+      }
+
+      @media only screen and (max-width: $bp-large) {
+        width: 40%;
+      }
+
+      @media only screen and (max-width: $bp-medium) {
+        width: 30%;
+      }
+    }
+
+    .select-icon {
+      height: 2.8rem;
+      width: 2.8rem;
+      position: absolute;
+      top: -1px;
+      right: 0;
+      fill: $color-white-1;
+    }
+  }
+
+  &__shipping {
+    font-size: 1.6rem;
+
+    &__price {
+      color: $color-red-1;
+      letter-spacing: 2px;
+    }
+  }
+
+  &__total {
+    font-size: 2.6rem;
+    font-weight: 500;
+
+    &__heading {
+      text-transform: uppercase;
+    }
+
+    &__price {
+      color: $color-red-1;
+      letter-spacing: 2px;
+    }
+  }
+}

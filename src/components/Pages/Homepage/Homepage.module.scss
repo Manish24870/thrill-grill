@@ -1,0 +1,114 @@
+@import "../../../sass/variables.scss";
+
+.homepage {
+  display: grid;
+  height: 100vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-blue-1, 0.9),
+      rgba($color-blue-1, 0.9)
+    ),
+    url(../../../resources/images/main.jpg);
+  background-size: cover;
+  background-position: top;
+  grid-template-rows: minmax(min-content, 30vh) minmax(min-content, 70vh);
+  grid-template-columns:
+    [left-start] minmax(4rem, 1fr) [left-end content-start] repeat(
+      8,
+      [col-start] minmax(min-content, 16rem) [col-end]
+    )
+    [content-end right-start] minmax(4rem, 1fr)
+    [right-end];
+
+  @media only screen and (max-width: $bp-smallest) {
+    grid-template-columns:
+      [left-start] minmax(1rem, 1fr) [left-end content-start] repeat(
+        8,
+        [col-start] minmax(min-content, 16rem) [col-end]
+      )
+      [content-end right-start] minmax(1rem, 1fr)
+      [right-end];
+  }
+}
+
+////////////////////////////////////
+///////MAIN CONTENT/////////////
+
+.main {
+  grid-column: col-start 3 / col-end 6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-column: col-start 1 / col-end 8;
+  }
+  @media only screen and (max-width: $bp-small) {
+    grid-column: col-start 1 / col-end 8;
+  }
+}
+
+.heading {
+  &__primary {
+    color: $color-red-1;
+    font-weight: 400;
+    font-size: 8.5rem;
+    letter-spacing: 1.4rem;
+    text-transform: uppercase;
+
+    @media only screen and (max-width: $bp-smallest) {
+      font-size: 7rem;
+      letter-spacing: 1.1rem;
+    }
+  }
+
+  &__secondary {
+    text-transform: uppercase;
+    font-size: 5rem;
+    font-weight: 300;
+    letter-spacing: 1rem;
+    color: $color-white-1;
+
+    @media only screen and (max-width: $bp-smallest) {
+      font-size: 3.6rem;
+      letter-spacing: 0.6rem;
+    }
+  }
+}
+////////////////////////////////////
+///////SHOP NOW BUTTON/////////
+
+.btn {
+  text-decoration: none;
+  font-family: inherit;
+  outline: none;
+  border: none;
+  padding: 1.5rem 4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &__shop {
+    margin-top: 8rem;
+    border-radius: 2px;
+    font-size: 2.3rem;
+    font-weight: 300;
+    background-color: $color-red-1;
+    color: $color-white-1;
+
+    &:hover {
+      background-color: $color-red-light-1;
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      background-color: $color-red-1;
+      transform: translateY(0px);
+    }
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+}

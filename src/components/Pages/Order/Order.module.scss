@@ -1,0 +1,46 @@
+@import "../../../sass/variables";
+
+////////////////////////////////////
+////////////ORDER///////////////
+
+.order {
+  display: grid;
+  min-height: 100vh;
+
+  background-color: $color-grey-dark-1;
+  grid-template-rows: 10rem 7rem auto;
+  grid-template-columns:
+    [left-start] minmax(4rem, 1fr) [left-end content-start] repeat(
+      8,
+      [col-start] minmax(0, 16rem) [col-end]
+    )
+    [content-end right-start] minmax(4rem, 1fr)
+    [right-end];
+
+  @media only screen and (max-width: $bp-smallest) {
+    grid-template-columns:
+      [left-start] minmax(1rem, 1fr) [left-end content-start] repeat(
+        8,
+        [col-start] minmax(min-content, 16rem) [col-end]
+      )
+      [content-end right-start] minmax(1rem, 1fr)
+      [right-end];
+  }
+
+  &__heading {
+    grid-column: content-start/content-end;
+    color: $color-white-1;
+    font-weight: 400;
+    font-size: 2.6rem;
+    text-transform: uppercase;
+    align-self: end;
+
+    @media only screen and (max-width: $bp-medium) {
+      grid-column: col-start 2 / col-end 7;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      grid-column: content-start / content-end;
+    }
+  }
+}

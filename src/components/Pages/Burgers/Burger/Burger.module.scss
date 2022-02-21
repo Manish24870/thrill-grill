@@ -1,0 +1,92 @@
+@import "../../../../sass/variables";
+
+////////////////////////////////////
+/////////BURGER///////////
+.burger {
+  background: $color-white-1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: 3.5rem;
+  &__image {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    z-index: 1;
+    width: 100%;
+    height: 22rem;
+    object-fit: cover;
+    background-position: center;
+    background-size: cover;
+  }
+
+  &__name {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    z-index: 5;
+    align-self: end;
+    transform: translateY(50%);
+    background-color: $color-grey-dark-1;
+    color: $color-white-1;
+    font-size: 1.6rem;
+    font-weight: 300;
+    width: 90%;
+    justify-self: center;
+    padding: 1.5rem 0.5rem;
+    text-align: center;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  &__price,
+  &__weight,
+  &__type,
+  &__size {
+    font-size: 1.5rem;
+    margin-left: 2rem;
+    color: $color-grey-dark-1;
+    span {
+      color: $color-red-1;
+    }
+  }
+
+  &__price,
+  &__weight {
+    margin-top: 2rem;
+  }
+}
+
+////////////////////////////////////
+///////ADD TO CART BUTTON/////////
+
+.btn {
+  font-family: inherit;
+  outline: none;
+  border: none;
+  padding: 1.5rem 4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &__cart {
+    grid-column: 1/-1;
+    font-size: 1.7rem;
+    background-color: $color-red-1;
+    color: $color-white-1;
+
+    &:hover {
+      background-color: $color-red-light-1;
+    }
+
+    &:active {
+      background-color: $color-red-1;
+    }
+
+    &:disabled {
+      background-color: $color-grey-1;
+      cursor: default;
+    }
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+}
